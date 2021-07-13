@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Dish } from '../shared/dish';
-const DISHES: Dish[] = [
+
+const DISHES: Dish[] =[
   {
     id: '0',
     name: 'Uthappizza',
@@ -43,20 +44,23 @@ const DISHES: Dish[] = [
     description: 'A delectable, semi-sweet New York Style Cheese Cake, with Graham cracker crust and spiced with Indian cardamoms'
   }
  ];
+
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  styleUrls: ['./menu.component.css'],
+  encapsulation: ViewEncapsulation.None 
 })
 export class MenuComponent implements OnInit {
 
-  dishes  = DISHES;
+  dishes: Dish[]  = DISHES;
 
-  selectedDish = DISHES[0];
+  selectedDish: Dish = DISHES[0];
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(){
   }
 
 }
